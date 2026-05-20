@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="goodhappy 瑜旅行行李箱 - 產品詳情">
+    <meta name="author" content="HAOXII LIMITED">
+    <meta name="theme-color" content="#2563EB">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="goodhappy">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title id="pageTitle">產品詳情 | goodhappy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#EFF6FF',
+                            100: '#DBEAFE',
+                            200: '#BFDBFE',
+                            300: '#93C5FD',
+                            400: '#60A5FA',
+                            500: '#3B82F6',
+                            600: '#2563EB',
+                            700: '#1D4ED8',
+                            800: '#1E40AF',
+                            900: '#1E3A8A',
+                        },
+                        dark: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            300: '#CBD5E1',
+                            400: '#94A3B8',
+                            500: '#64748B',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Noto Sans TC', 'Inter', 'Roboto', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased transition-colors duration-300 bg-dark-50 dark:bg-dark-950">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 dark:bg-dark-900/95 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 md:w-10 md:h-10 text-primary-600 dark:text-primary-400" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="8" width="32" height="28" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M4 16h32" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="12" r="2" fill="currentColor"/>
+                        <path d="M12 22h16M12 28h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="text-xl md:text-2xl font-bold text-primary-600 dark:text-primary-400">goodhappy</span>
+                </a>
+
+                <div class="flex items-center space-x-3 md:space-x-4">
+                    <a href="index.html" class="hidden sm:flex items-center space-x-2 px-4 py-2 text-dark-600 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        <span data-i18n="product.back">返回首頁</span>
+                    </a>
+
+                    <div class="relative">
+                        <button id="langSwitcher" class="flex items-center space-x-1 px-3 py-2 rounded-lg bg-dark-100 dark:bg-dark-800 hover:bg-dark-200 dark:hover:bg-dark-700 transition-colors">
+                            <svg class="w-5 h-5 text-dark-600 dark:text-dark-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                            </svg>
+                            <span id="currentLang" class="text-sm font-medium text-dark-600 dark:text-dark-300">中文</span>
+                        </button>
+                        <div id="langDropdown" class="hidden absolute right-0 mt-2 w-28 rounded-lg shadow-lg bg-white dark:bg-dark-800 border border-dark-200 dark:border-dark-700 overflow-hidden">
+                            <button data-lang="zh" class="lang-option w-full px-4 py-2 text-left text-sm text-dark-700 dark:text-dark-300 hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors">中文</button>
+                            <button data-lang="en" class="lang-option w-full px-4 py-2 text-left text-sm text-dark-700 dark:text-dark-300 hover:bg-primary-50 dark:hover:bg-dark-700 transition-colors">English</button>
+                        </div>
+                    </div>
+
+                    <button id="themeToggle" class="p-2 rounded-lg bg-dark-100 dark:bg-dark-800 hover:bg-dark-200 dark:hover:bg-dark-700 transition-colors">
+                        <svg id="sunIcon" class="w-5 h-5 text-dark-600 dark:text-dark-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <svg id="moonIcon" class="w-5 h-5 text-dark-600 dark:text-dark-300 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <main class="pt-24 md:pt-28 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="productDetail" class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+                <!-- Product Image -->
+                <div class="aspect-square rounded-3xl bg-white dark:bg-dark-800 p-6 md:p-10 flex items-center justify-center overflow-hidden">
+                    <img id="productImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-xl shadow-lg">
+                </div>
+
+                <!-- Product Info -->
+                <div class="flex flex-col">
+                    <div class="mb-6">
+                        <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-3" data-i18n="product.badge">旅行行李箱</span>
+                        <h1 id="productName" class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 dark:text-white mb-4"></h1>
+                        <p id="productNameEn" class="text-xl text-dark-500 dark:text-dark-400"></p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-dark-900 dark:text-white mb-3" data-i18n="product.description">產品描述</h3>
+                        <p id="productDesc" class="text-dark-600 dark:text-dark-400 leading-relaxed"></p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-dark-900 dark:text-white mb-4" data-i18n="product.specs">产品规格</h3>
+                        <div id="productSpecs" class="space-y-3">
+                            <!-- Specs will be loaded via JS -->
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-dark-900 dark:text-white mb-4" data-i18n="product.features">產品特點</h3>
+                        <ul id="productFeatures" class="space-y-3">
+                            <!-- Features will be loaded via JS -->
+                        </ul>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-lg font-semibold text-dark-900 dark:text-white mb-4" data-i18n="product.material">材質說明</h3>
+                        <p id="productMaterial" class="text-dark-600 dark:text-dark-400 leading-relaxed"></p>
+                    </div>
+
+                    <div class="mt-auto pt-8 border-t border-dark-200 dark:border-dark-700">
+                        <h3 class="text-lg font-semibold text-dark-900 dark:text-white mb-4" data-i18n="product.inquiry">產品咨詢</h3>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="mailto:ilkzkuol340173@outlook.com" class="flex-1 flex items-center justify-center space-x-2 px-6 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                <span data-i18n="product.emailUs">郵件咨詢</span>
+                            </a>
+                            <a href="tel:+85244253521" class="flex-1 flex items-center justify-center space-x-2 px-6 py-4 bg-dark-800 hover:bg-dark-700 dark:bg-dark-700 dark:hover:bg-dark-600 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <span>+852 4425 3521</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="mt-20">
+                <h2 class="text-2xl md:text-3xl font-bold text-dark-900 dark:text-white mb-8 text-center" data-i18n="product.related">相關產品</h2>
+                <div id="relatedProducts" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <!-- Related products will be loaded via JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 dark:bg-dark-950 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-primary-400" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="8" width="32" height="28" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M4 16h32" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="12" r="2" fill="currentColor"/>
+                        <path d="M12 22h16M12 28h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="text-xl font-bold">goodhappy</span>
+                </div>
+                <p class="text-dark-400 text-sm">
+                    © 2026 HAOXII LIMITED. <span data-i18n="footer.rights">版權所有。</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProductDetail();
+        });
+    </script>
+</body>
+</html>
